@@ -89,13 +89,13 @@ function done_validating(action){
 function show_caddy_stroage(){
 
 	var code = '<option value="-1" >请选择存储设备</option>';
-	code +='<option value="/media/" >/media/</option>';
+	code +='<option value="/etc/media/" >/etc/media/</option>';
 	if(pool_names().length == 0)
 		code +='<option value="non" >未发现存储设备</option>';
 	else{
 	
 		for(var i = 0; i < pool_names().length; ++i){
-			code +='<option value="/media/'+ pool_names()[i] +'" >/media/'+ pool_names()[i] + '/</option>';
+			code +='<option value="/etc/media/'+ pool_names()[i] +'" >/etc/media/'+ pool_names()[i] + '/</option>';
 		}
 	}
 	$("caddy_storage").innerHTML = code;
@@ -109,7 +109,7 @@ function show_caddy_dir(){
 	else{
 	
 		for(var i = 0; i < pool_names().length; ++i){
-			code +='<option value="/media/'+ pool_names()[i] +'" >/media/'+ pool_names()[i] + '/caddy</option>';
+			code +='<option value="/etc/media/'+ pool_names()[i] +'" >/etc/media/'+ pool_names()[i] + '/caddy</option>';
 		}
 	}
 	$("caddy_dir").innerHTML = code;
